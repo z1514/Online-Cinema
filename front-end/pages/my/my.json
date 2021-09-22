@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "popup": "../pop/pop"
+  },
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor": "#e54847",
+  "navigationBarTextStyle": "white"
+}

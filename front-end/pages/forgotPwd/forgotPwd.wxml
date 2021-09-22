@@ -1,0 +1,21 @@
+<!--pages/fogotPwd/forgotPwd.wxml-->
+
+<view>
+<!--用户名 && 密码-->
+<view class="container">
+<form class="login-from" bindsubmit="loginsubmit">
+  <view class="inputView"> 
+    <image class="nameImage" src="../../resources/images/userImg.png"></image> 
+    <input class="inputText" name="name" placeholder="请输入用户名"></input>
+  </view> 
+  <view class="inputView"> 
+    <image class="keyImage" src="../../resources/images/animal.png"></image> 
+    <input class="inputText" name="answer" placeholder="您最喜欢的动物是?"></input>
+  </view>
+  <!--登录button-->
+  <view class="loginBtnView">
+    <button class="loginBtn" type="primary" form-type="submit">登录</button>
+  </view>
+</form>
+</view>
+</view>

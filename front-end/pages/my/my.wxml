@@ -1,0 +1,44 @@
+<!--pages/my/my.wxml-->
+<view>
+  <view class="user-info" style="background-image: url(../../../../resources/images/bk.jpg)">
+    <view bindtap="cancel">
+      <image class="user-cancel" src="../../resources/images/cancel.jpg"></image>
+    </view>
+    <!--用户头像-->
+    <image bindtap="goLogin" src="../../resources/images/headImg.png" class="user-avatar"></image>
+    <!--用户昵称-->
+    <view class="user-name">
+      {{userInfo.name}}
+      <!--用户性别-->
+      <block wx:if="{{userInfo.gender == 1}}">
+        <view class="user-sex-male"></view>
+      </block>
+      <block wx:elif="{{userInfo.gender == 2}}">
+        <view class="user-sex-female"></view>
+      </block>
+    </view>
+  </view>
+
+
+  <view class="grids">
+    <block wx:for="{{gridList}}" wx:for-item="gridItem" wx:for-index="gridIndex" wx:key="grid">
+      <view class="grid" bindtap="viewGridDetail" data-url="{{gridItem.enName}}">
+        <view class="grid-icon grid-icon-{{gridItem.enName}}"></view>
+        <view class="grid-title">{{gridItem.zhName}}</view>
+      </view>
+    </block>
+  </view>
+
+  <!--修改密码 弹窗-->
+<view class="container">
+  <popup id='popup' 
+      title='修改密码'  
+      pwd='输入新密码'
+      btn_no='取消' 
+      btn_ok='修改'
+      bind:error="_error"  
+      bind:success="_success">
+  </popup>
+</view>
+
+</view>

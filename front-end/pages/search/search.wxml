@@ -1,0 +1,83 @@
+<view>
+<!--单选模板
+  <view class="film_item_select">
+    <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+      <radio-group bindchange="film_item_select_change">
+        <label class="weui-cell weui-check__label" wx:for="{{item}}" wx:key="value" style="display: inline-block">
+          <view class="weui-cell__hd">
+            <radio value="{{item.value}}" checked="true"/>{{item.name}}
+          </view>
+        </label>
+      </radio-group>
+    </scroll-view>
+  </view>
+-->
+
+
+<!--下拉搜索-->
+<view class="select_container">
+<!--地区-->
+<view class="fenlei">
+  <view class='select_box'>
+    <!--下拉框 未下拉-->
+    <view class='select' catchtap='selectTapsOfArea'>
+      <text class='select_text'>{{selectArea[indexsOfArea]}}</text>
+    </view>
+    <!--下拉-->
+    <view class='option_box' style='height:{{showsOfArea?(selectArea.length>5?300:selectArea.length*60):0}}rpx;'>
+      <text class='option' style='{{indexs==selectArea.length-1&&"border:0;"}}' wx:for='{{selectArea}}' wx:key='this' data-index='{{index}}' catchtap='optionTapsOfArea'>{{item}}</text>
+    </view>
+  </view>
+</view>
+<!--类型-->
+<view class="fenlei">
+  <view class='select_box'>
+    <!--下拉框 未下拉-->
+    <view class='select' catchtap='selectTapsOfType'>
+      <text class='select_text'>{{selectType[indexsOfType]}}</text>
+    </view>
+    <!--下拉-->
+    <view class='option_box' style='height:{{showsOfType?(selectType.length>5?300:selectType.length*60):0}}rpx;'>
+      <text class='option' style='{{indexs==selectType.length-1&&"border:0;"}}' wx:for='{{selectType}}' wx:key='this' data-index='{{index}}' catchtap='optionTapsOfType'>{{item}}</text>
+    </view>
+  </view>
+</view>
+</view>
+
+<!-- 分割线 -->
+<view class="divLine"></view>
+
+<!--搜索结果-->
+<view class="searchResult">
+  <block wx:if="{{result.length == 0}}">
+    <template is="nullTip" data="{{nullTip: nullTip}}"/>
+  </block>
+  <block wx:else>
+    <block wx:for="{{result}}" wx:for-item="filmFavoriteItem" wx:for-index="filmFavoriteIndex" wx:key="filmFavorite">
+      <view> 
+      <navigator url="../show/show?id={{filmFavoriteItem.id}}" class="favorite-film-item" data-id="{{filmFavoriteItem.id}}">
+        <image class="favorite-film-cover" src="http://localhost:8090/film/resource/image/{{filmFavoriteItem.picture}}.jpg"></image>
+        <view class="favorite-film-info">
+          <view class="favorite-film-txt favorite-film-title">{{filmFavoriteItem.name}}
+          </view>
+          <view class="favorite-film-txt">评分：
+            <block wx:if="{{filmFavoriteItem.rating.average == 0}}">
+              暂无评分
+            </block>
+            <block wx:else>
+              {{filmFavoriteItem.score}}分
+            </block>
+          </view>
+          <view class="favorite-film-txt">上映年份：{{filmFavoriteItem.year}}年</view>
+        </view>
+      </navigator>
+      </view>
+    </block>
+  </block>
+
+
+
+</view>
+
+
+</view>

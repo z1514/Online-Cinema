@@ -1,0 +1,35 @@
+<view class="main">
+  <MyTitle></MyTitle>
+  <view class="video-info">
+    <video src="{{videoSrc}}" controls></video>
+    <view class="video-title">
+      <text class="fa fa-angle-down"></text>
+    </view>
+    <view class="video-detail">
+      <view><text class="title">{{videoInfo[0].name}}</text></view>
+      <view class="other"><text decode="true">评分{{videoInfo[0].score}}<br/>
+      &nbsp;主演:{{videoInfo[0].actor}}</text>
+      </view>
+      <view class="desc"><textarea decode="true">简介：{{videoInfo[0].intro}}</textarea>
+      </view>
+    </view>
+    <view class="text">
+    更多推荐
+    </view>
+    <view class="other-list">
+      <navigator url="../show/show?id={{item.id}}" class="item-other" wx:for="{{othersList}}" wx:key="{{index}}">
+        <view class="other-img-wrap">
+          <image src="http://localhost:8090/film/resource/image/{{item.picture}}.jpg" mode="widthFix"></image>
+        </view>
+        <view class="other-info">
+          <view class="title">{{item.name}}</view>
+          <view class="other-detail">
+            <text>评分:<text style="color:red">{{item.score}}    </text></text>
+            <text>时长:{{item.length}}分钟</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    
+    </view>
+</view>

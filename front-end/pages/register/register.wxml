@@ -1,0 +1,22 @@
+<!--pages/register/register.wxml-->
+
+<view class="container">
+<form class="register-from" bindsubmit="registersubmit">
+  <view class="inputView"> 
+    <image class="nameImage" src="../../resources/images/userImg.png"></image> 
+    <input class="inputText" name="name" placeholder="请输入用户名"></input>
+  </view> 
+  <view class="inputView"> 
+    <image class="keyImage" src="../../resources/images/pwdImg.png"></image> 
+    <input class="inputText" name="pwd" placeholder="请输入密码"></input>
+  </view>
+  <view class="inputView"> 
+    <image class="nameImage" src="../../resources/images/animal.png"></image> 
+    <input class="inputText" name="answer" placeholder="请输入最喜欢的动物"></input>
+  </view> 
+  <!--登录button-->
+  <view class="registerBtnView">
+    <button class="registerBtn" type="primary" form-type="submit">注册</button>
+  </view>
+</form>
+</view>

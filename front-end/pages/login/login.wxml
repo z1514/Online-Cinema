@@ -1,0 +1,32 @@
+<!--pages/login/login.wxml-->
+<view>
+<!--用户名 && 密码-->
+<view class="container">
+<form class="login-from" bindsubmit="loginsubmit">
+  <view class="inputView"> 
+    <image class="nameImage" src="../../resources/images/userImg.png"></image> 
+    <input class="inputText" name="name" placeholder="请输入用户名"></input>
+  </view> 
+  <view class="inputView"> 
+    <image class="keyImage" src="../../resources/images/pwdImg.png"></image> 
+    <input class="inputText" name="pwd" placeholder="密码"></input>
+  </view>
+  <!--登录button-->
+  <view class="loginBtnView">
+    <button class="loginBtn" type="primary" form-type="submit">登录</button>
+  </view>
+</form>
+</view>
+
+<!--注册-->
+<view class="loginBtnView">
+  <button class="loginBtn" type="primary" bindtap="register">注册</button>
+</view>
+
+
+<!--忘记密码-->
+<view class="loginBtnView">
+  <button class="loginBtn" type="primary" bindtap="toForgotPwd">忘记密码</button>
+</view>
+
+</view>

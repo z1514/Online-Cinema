@@ -1,0 +1,36 @@
+<view class="main">
+  <!-- 轮播图 -->
+  <view class="slides">
+    <swiper autoplay indicator-dots circular>
+      <swiper-item wx:for="{{swiperList}}" wx:key="{{index}}">
+        <navigator url="../show/show?id={{item.id}}">
+          <image src="http://localhost:8090/film/resource/image/{{item.picture}}.jpg"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--猜你喜欢-->
+  <view class="text">
+  猜你喜欢
+  </view>
+  <!-- 视频列表 -->
+  <view class="video-wrap">
+    <navigator url="../show/show?id={{item.id}}" class="video-item" wx:for="{{videosList}}" wx:key="{{index}}">
+      <view class="video-img">
+        <image src="http://localhost:8090/film/resource/image/{{item.picture}}.jpg" mode="widthFix" class="video-img-image"></image>
+      </view>
+      <view class="video-title">{{item.name}}</view>
+    </navigator>
+  </view>
+  <view class="text">
+  最多播放
+  </view>
+  <view class="video-wrap">
+    <navigator url="../show/show?id={{item.id}}" class="video-item" wx:for="{{videosList}}" wx:key="{{index}}">
+      <view class="video-img">
+        <image src="http://localhost:8090/film/resource/image/{{item.picture}}.jpg" mode="widthFix" class="video-img-image"></image>
+      </view>
+      <view class="video-title">{{item.name}}</view>
+    </navigator>
+  </view>
+</view>

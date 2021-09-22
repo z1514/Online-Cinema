@@ -1,0 +1,27 @@
+<!--pages/history/history.wxml-->
+<view class="searchResult">
+  <block wx:if="{{result.length == 0}}">
+    <template is="nullTip" data="{{nullTip: nullTip}}"/>
+  </block>
+  <block wx:else>
+    <block wx:for="{{result}}" wx:for-item="filmFavoriteItem" wx:for-index="filmFavoriteIndex" wx:key="filmFavorite">
+      <view>
+      <navigator url="../show/show?id={{filmFavoriteItem.id}}" class="favorite-film-item" data-id="{{filmFavoriteItem.id}}">
+        <image class="favorite-film-cover" src="http://localhost:8090/film/resource/image/{{filmFavoriteItem.picture}}.jpg"></image>
+        <view class="favorite-film-info">
+          <view class="favorite-film-txt favorite-film-title">{{filmFavoriteItem.name}}
+          </view>
+          <view class="favorite-film-txt">上次观看时间：
+            <block wx:if="{{filmFavoriteItem.rating.average == 0}}">
+              暂无评分
+            </block>
+            <block wx:else>
+              {{filmFavoriteItem.time}}
+            </block>
+          </view>
+        </view>
+      </navigator>
+      </view>
+    </block>
+  </block>
+</view>

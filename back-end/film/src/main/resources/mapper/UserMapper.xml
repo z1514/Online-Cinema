@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seu.film.mapper.UserMapper">
+
+    <!-- int addUser(User user)-->
+    <insert id="addUser" parameterType="User">
+        INSERT INTO users (name,pwd,auth,answer) VALUES (#{name},#{pwd},#{auth},#{answer})
+    </insert>
+
+    <!-- int deleteUser(User user)-->
+    <delete id="deleteUser" parameterType="User">
+        DELETE FROM users WHERE name = #{name} AND pwd = #{pwd}
+    </delete>
+
+    <!-- int vipUser(User user)-->
+    <update id='vipUser' parameterType="User">
+        UPDATE users SET auth = 1 WHERE name = #{name} AND pwd = #{pwd}
+    </update>
+
+    <!-- int reviseUser(User user)-->
+    <update id='reviseUser' parameterType="User">
+        UPDATE users SET pwd = #{pwd} WHERE name = #{name} AND answer = #{answer}
+    </update>
+
+    <!-- int loginUser(User user)-->
+    <select id="loginUser" resultType="User" parameterType="User">
+        SELECT * FROM users WHERE name = #{name}
+    </select>
+
+    <!-- int retrieveUser(User user)-->
+    <select id="retrieveUser" resultType="User" parameterType="User">
+        SELECT * FROM users WHERE name = #{name}
+    </select>
+</mapper>
