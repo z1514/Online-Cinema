@@ -16,7 +16,15 @@ Online Cinema is a collaborative WeChat mini program supporting movie searching,
 
 ## Techniques
 
-HTML, Javascript, jQuery, AJAX, Wechat front-end framework, SpringBoot, and MyBatis. 
+**Front End**
+* HTML
+* Javascript
+* jQuery
+* AJAX
+* Wechat front-end framework
+**Back End**
+* SpringBoot
+* MyBatis 
 
 ## Functions
 
