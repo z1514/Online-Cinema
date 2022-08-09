@@ -27,7 +27,7 @@ Online Cinema is a collaborative WeChat mini program supporting movie searching,
 * SpringBoot
 * MyBatis 
 
-## Functions
+## Features
 
 **Home Page**
 
